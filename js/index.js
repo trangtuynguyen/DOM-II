@@ -52,6 +52,13 @@ p.forEach((paragraph)=>{
     })
 });
 
+p.forEach((paragraph)=>{
+    paragraph.addEventListener("cut", event => {
+        alert('why are you cutting?');
+        paragraph.style.color = 'red';
+    })
+});
+
 
 const h2 = document.querySelectorAll('h2');
 
@@ -68,7 +75,7 @@ window.addEventListener('scroll',()=>{
     
 });
 
-const destBtn = document.querySelector('.destination .btn button');
+const destBtn = document.querySelector('.destination h4');
 const dest = document.querySelector('.destination p');;
 console.log(dest)
 
@@ -77,6 +84,17 @@ dest.addEventListener('copy', event =>{
     dest.preventDefault();
 })
 
+destBtn.addEventListener('mouseenter', (event) =>{
+    destBtn.style.color ='orange';
+})
+
+destBtn.addEventListener('mouseleave', (event) =>{
+    destBtn.style.color ='gray';
+})
+
+destBtn.addEventListener('mouseout', (event) =>{
+    destBtn.style.color ='purple';
+})
 
 
 
