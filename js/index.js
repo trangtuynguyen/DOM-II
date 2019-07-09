@@ -4,17 +4,33 @@
 let navItem = document.querySelectorAll('.nav-link');
 console.log(navItem);
 
+
+
 for(let i=0;i<navItem.length; i++){
     navItem[i].addEventListener('click', event =>{
+        event.preventDefault();
         if(event.target.style.color != 'red'){
             event.target.style.color = 'red';
+            event.stopPropagation();
         }
         else{
             event.target.style.color = 'black';
+            event.stopPropagation();
         }
     })
 }
+
 let p = document.querySelectorAll('p');
+
+let content = document.querySelector('nav');
+content.addEventListener('click', event =>{
+    alert('this should not pop up');
+})
+
+
+console.log(content);
+
+
 
 p.forEach((paragraph)=>{
     paragraph.addEventListener('copy', event =>{
